@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply bg-zinc-900 h-full overflow-x-hidden
+}
+
+#__next {
+    @apply h-full;
+}
+
+html {
+    @apply h-full;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap !important;   /* bắt buộc xuống dòng */
+  gap: 12px;
+  overflow-x: visible !important;
+}
+
+/* item trong row */
+.row > * {
+  flex: 0 0 calc(16.666% - 12px); /* 6 item / hàng */
+  min-width: 160px;               /* tránh quá nhỏ */
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .row > * {
+    flex: 0 0 calc(25% - 12px);   /* 4 item / hàng */
+  }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .row > * {
+    flex: 0 0 calc(50% - 12px);   /* 2 item / hàng */
+  }
+}
+
